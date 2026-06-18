@@ -51,19 +51,19 @@ final class HomeViewModel {
         self.tools = [
             ToolModel(
                 title: "Redesign",
-                subTitle: "Refresh your space with a new interior look",
+                subTitle: "Refresh your space with a new\ninterior look",
                 beforeImage: "redesign_before",
                 afterImage: "redesign_after"
             ),
             ToolModel(
                 title: "Sketch to Render",
-                subTitle: "Refresh your space with a new interior look",
+                subTitle: "Refresh your space with a new\ninterior look",
                 beforeImage: "sketch_before",
                 afterImage: "sketch_after"
             ),
             ToolModel(
                 title: "Design Transfer",
-                subTitle: "Refresh your space with a new interior look",
+                subTitle: "Refresh your space with a new\ninterior look",
                 beforeImage: "design_before",
                 afterImage: "design_after"
             )
