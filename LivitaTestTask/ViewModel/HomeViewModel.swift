@@ -17,6 +17,8 @@ final class HomeViewModel {
     enum AlertType: Identifiable {
         case pro
         case profile
+        case resize
+        case save
         
         var id: Self { self }
         
@@ -24,6 +26,8 @@ final class HomeViewModel {
             switch self {
             case .pro: return "Get Pro"
             case .profile: return "Profile"
+            case .resize: return "Resize"
+            case .save: return "Save"
             }
         }
         
@@ -31,6 +35,8 @@ final class HomeViewModel {
             switch self {
             case .pro: return "You tapped “Get Pro“"
             case .profile: return "You tapped “Profile“"
+            case .resize: return "You tapped “Resize“"
+            case .save: return "You tapped “Save“"
             }
         }
     }
@@ -70,5 +76,13 @@ final class HomeViewModel {
     
     func profileButtonTapped() {
         activeAlert = .profile
+    }
+    
+    func resizeButtonTapped() {
+        activeAlert = .resize
+    }
+    
+    func saveButtonTapped() {
+        activeAlert = .save
     }
 }

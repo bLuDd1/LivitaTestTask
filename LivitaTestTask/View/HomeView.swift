@@ -54,7 +54,7 @@ struct HomeView: View {
                         VStack(spacing: 8) {
                             ForEach(viewModel.tools) { tool in
                                 ToolCardView(tool: tool) {
-                                    print("\(tool.title) Tapped")
+                                    viewModel.selectedTool = tool
                                 }
                                 .padding(.horizontal, 18)
                             }
@@ -65,7 +65,10 @@ struct HomeView: View {
                 }
             }
         }
-        .alert(item: Bindable(viewModel).activeAlert) { alert in
+        .fullScreenCover(item: $viewModel.selectedTool) { tool in
+            ResultView(tool: tool, viewModel: viewModel)
+        }
+        .alert(item: $viewModel.activeAlert) { alert in
             Alert(
                 title: Text(alert.title),
                 message: Text(alert.message),
@@ -74,7 +77,6 @@ struct HomeView: View {
         }
     }
 }
-
 
 
 #Preview {
