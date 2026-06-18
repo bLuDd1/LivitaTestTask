@@ -13,7 +13,7 @@ struct GalleryView: View {
             Text("GalleryView will be soon")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.systemGray6).opacity(0.5))
+        .background(Color(.systemGray5).opacity(0.5))
     }
 }
 
