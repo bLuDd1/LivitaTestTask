@@ -17,49 +17,50 @@ struct HomeView: View {
                     .opacity(0.5)
                     .ignoresSafeArea()
                 
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 16) {
-                        HStack {
-                            Button(action: {
-                                viewModel.proButtonTapped()
-                            }) {
-                                Text("GET PRO")
-                                    .font(.system(size: 16, weight: .bold))
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, 18)
-                                    .padding(.vertical, 12)
-                                    .background(
-                                        LinearGradient(
-                                            colors: [.newOr, .newPur, .newBl],
-                                            startPoint: .leading,
-                                            endPoint: .trailing
-                                        )
+                VStack(spacing: 10) {
+                    HStack {
+                        Button(action: {
+                            viewModel.proButtonTapped()
+                        }) {
+                            Text("GET PRO")
+                                .font(.system(size: 16, weight: .bold))
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 18)
+                                .padding(.vertical, 8)
+                                .background(
+                                    LinearGradient(
+                                        colors: [.newOr, .newPur, .newBl],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
                                     )
-                                    .cornerRadius(96)
-                            }
-                            
-                            Spacer()
-                            
-                            Button(action: {
-                                viewModel.profileButtonTapped()
-                            }) {
-                                Image(systemName: "person.crop.circle")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(.gray)
-                            }
-                        }
-                        .padding(.horizontal, 18)
-                        .padding(.top, 10)
-                        
-                        ForEach(viewModel.tools) { tool in
-                            ToolCardView(tool: tool) {
-                                print("\(tool.title) Tapped")
-                            }
-                            .padding(.horizontal, 18)
+                                )
+                                .cornerRadius(96)
                         }
                         
-                        Spacer(minLength: 100)
+                        Spacer()
+                        
+                        Button(action: {
+                            viewModel.profileButtonTapped()
+                        }) {
+                            Image(systemName: "person.crop.circle")
+                                .resizable()
+                                .frame(width: 27, height: 27)
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    .padding(.horizontal, 18)
+                    .padding(.vertical, 10)
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 8) {
+                            ForEach(viewModel.tools) { tool in
+                                ToolCardView(tool: tool) {
+                                    print("\(tool.title) Tapped")
+                                }
+                                .padding(.horizontal, 18)
+                            }
+                            
+                            Spacer(minLength: 100)
+                        }
                     }
                 }
             }
